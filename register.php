@@ -4,7 +4,7 @@
 $page_title = 'Register';
 include('includes/header.html');
 
-// Check for form submission:
+// Check for form submission:.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	require('./pdo_connect.php'); // Connect to the db.
