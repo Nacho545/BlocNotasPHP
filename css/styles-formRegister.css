@@ -74,3 +74,30 @@ body {
 .botons:hover {
   transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0);
 }
+
+
+/* VERIFICATION OF USER REGISTERED */
+
+.registered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.registered h1 {
+  font-size: 80px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.registered p {
+  margin-top: 20px;
+  font-size: 60px;
+  line-height: 50px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #7A7A7A;
+}
