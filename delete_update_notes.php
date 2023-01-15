@@ -2,9 +2,11 @@
 // This script retrieves all the records from the users table.
 // This new version links to edit and delete pages.
 
-$page_title = 'View the Current Users';
+$page_title = 'View the Current Notes';
 include('includes/header.html');
-echo '<h1>Registered Users</h1>';
+echo '<div class=page-header>
+    	<h1>----- Delete Notes -----</h1>
+	  </div>';
 
 require('./pdo_connect.php');
 
@@ -21,8 +23,12 @@ $num = count($rows);
 if ($num > 0) { // If it ran OK, display the records.
 
 	// Print how many users there are:
-	echo "<p>There are currently $num registered users.</p>\n";
-
+	
+	echo '<div class=numNotes>
+			<img src=images/logo.png alt=noteIcon>
+			<p>There are currently '.$num.' registered users</p>
+			<img src=images/logo.png alt=noteIcon>
+	      </div>';
 	// Table header:
 	echo '<table width="60%">
 	<thead>
