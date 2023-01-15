@@ -26,7 +26,7 @@ if ($num > 0) { // If it ran OK, display the records.
 	
 	echo '<div class=numNotes>
 			<img src=images/logo.png alt=noteIcon>
-			<p>There are currently '.$num.' registered users</p>
+			<p>There are currently '.$num.' registered notes</p>
 			<img src=images/logo.png alt=noteIcon>
 	      </div>';
 	// Table header:

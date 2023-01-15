@@ -43,6 +43,11 @@ body {
   color: white;
 }
 
+.textArea {
+  font-size: 15px;
+  resize: none;
+}
+
 .form-register p {
   height: 40px;
   text-align: center;
