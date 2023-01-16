@@ -3,7 +3,16 @@
 // This page is accessed through view_users.php.
 
 $page_title = 'Delete a User';
-include('includes/header.html');
+
+// Continuamos la sesión
+session_start();
+// Devolver los valores de sesión
+if (isset($_SESSION["usuario"])){
+    include('includes/header_logged.html');
+} else {
+    include('includes/header.html');
+}
+
 echo '<h1>Delete a User</h1>';
 
 // Check for a valid user ID, through GET or POST:

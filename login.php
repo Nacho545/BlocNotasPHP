@@ -2,7 +2,15 @@
 // This script performs an INSERT query to add a record to the users table.
 
 $page_title = 'Login';
-include('includes/header.html');
+
+// Continuamos la sesión
+session_start();
+// Devolver los valores de sesión
+if (isset($_SESSION["usuario"])){
+    include('includes/header_logged.html');
+} else {
+    include('includes/header.html');
+}
 
 // Check for form submission:.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -61,6 +69,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 						<h1>--- Welcome! ---</h1>
 						<p>You are now logued.</p>
 		  			</div>';
+
+			// Guardar datos de sesión
+			$_SESSION["usuario"] = $_POST["email"];
+
 			} else { // Not a valid user.
 				echo '<div class=registered>
 						<h1>--- No Registered ---</h1>

@@ -1,7 +1,15 @@
 <?php # Script 3.7 - index.php #2
 
 $page_title = 'Notepad';
-include('includes/header.html');
+
+// Continuamos la sesión
+session_start();
+// Devolver los valores de sesión
+if (isset($_SESSION["usuario"])){
+    include('includes/header_logged.html');
+} else {
+    include('includes/header.html');
+}
 
 ?>
 

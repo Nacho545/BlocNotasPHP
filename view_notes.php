@@ -3,7 +3,16 @@
 // This new version links to edit and delete pages.
 
 $page_title = 'View Notes';
-include('includes/header.html');
+
+// Continuamos la sesión
+session_start();
+// Devolver los valores de sesión
+if (isset($_SESSION["usuario"])){
+    include('includes/header_logged.html');
+} else {
+    include('includes/header.html');
+}
+
 echo '<div class=page-header>
     	<h1>----- Notes -----</h1>
 	  </div>';

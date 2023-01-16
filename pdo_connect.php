@@ -1,7 +1,7 @@
 <?php
 $flag=FALSE;
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=sitename;charset=utf8mb4', 'sitenameuser', '123');
+    $pdo = new PDO('mysql:host=localhost;dbname=notepad;charset=utf8mb4', 'root', '');
     $output = 'Database connection established.';
 } catch (PDOException $e) {
     // Al ser $e un objeto, tiene metodos.

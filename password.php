@@ -2,7 +2,15 @@
 // This page lets a user change their password.
 
 $page_title = 'Change Your Password';
-include('includes/header.html');
+
+// Continuamos la sesión
+session_start();
+// Devolver los valores de sesión
+if (isset($_SESSION["usuario"])){
+    include('includes/header_logged.html');
+} else {
+    include('includes/header.html');
+}
 
 // Check for form submission:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
