@@ -16,7 +16,7 @@ session_destroy();
 echo '<div class=registered>
 		<h1>--- See you soon! ---</h1>
 		<p>You are now loged out.</p>
-	</div>';
+	  </div>';
 
 ?>
 
