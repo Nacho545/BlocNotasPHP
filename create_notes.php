@@ -7,6 +7,7 @@ $page_title = 'Create Note';
 session_start();
 // Devolver los valores de sesión
 if (isset($_SESSION["usuario"])){
+	//echo $_SESSION["user_id"];
     include('includes/header_logged.html');
 } else {
     include('includes/header.html');
@@ -41,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 		$flag=TRUE;
 		try {
-			$q = "INSERT INTO notes (title, bodyNote, registration_date) VALUES (:ti, :bn, NOW() )";
+			$q = "INSERT INTO notes (title, bodyNote, registration_date_note, userID) VALUES (:ti, :bn, NOW(), :ui)";
 			
 			// 1. Preparamos la query a través del método "prepare" del OBJETO $pdo. (Devuelve un statement)
 			$stmnt = $pdo->prepare($q);
@@ -50,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			// Se hace así porque si el usuario nos intenta hacer inyeccion de codigo, todo esto queda desactivado.
 			$stmnt->bindValue(':ti',$ti);
 			$stmnt->bindValue(':bn',$bn);
+			$stmnt->bindValue(':ui',$_SESSION["user_id"]);
 
 			// 3. Ejecutamos la query.
 			$stmnt->execute();

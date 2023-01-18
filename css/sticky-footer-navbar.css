@@ -57,6 +57,11 @@ section{
     background-position: center center;
 }
 
+.logout {
+    background-color: red;
+    font-weight: bold;
+}
+
 @media (max-width: 952px){
     .enlace{
         padding-left: 20px;

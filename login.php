@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			$emailQuery = $_POST["email"];
 			$passQuery = hash("sha512",$_POST["pass1"]);
-            $q = "SELECT first_name, email, pass FROM users WHERE email=:email AND pass=:pass";
+            $q = "SELECT user_id, first_name, email, pass FROM users WHERE email=:email AND pass=:pass";
 			
 			// 1. Preparamos la query a través del método "prepare" del OBJETO $pdo. (Devuelve un statement)
 			$stmnt = $pdo->prepare($q);
@@ -72,6 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			// Guardar datos de sesión
 			$_SESSION["usuario"] = $_POST["email"];
+			$_SESSION["user_id"] = $rows[0]["user_id"];
 
 			} else { // Not a valid user.
 				echo '<div class=registered>

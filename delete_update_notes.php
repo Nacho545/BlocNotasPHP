@@ -20,7 +20,7 @@ echo '<div class=page-header>
 require('./pdo_connect.php');
 
 // Define the query:
-$q = "SELECT last_name, first_name, DATE_FORMAT(registration_date, '%M %d, %Y') AS dr, user_id FROM users ORDER BY registration_date ASC";
+$q = "SELECT note_id, title, bodyNote, DATE_FORMAT(registration_date_note, '%M %d, %Y') AS dr, userID FROM notes ORDER BY registration_date_note ASC";
 $result = $pdo->query($q);
 // El metodo fetchAll() es para coger todos los datos.
 // $rows es un ARRAY de ARRAYS.
@@ -35,7 +35,7 @@ if ($num > 0) { // If it ran OK, display the records.
 	
 	echo '<div class=numNotes>
 			<img src=images/logo.png alt=noteIcon>
-			<p>There are currently '.$num.' registered notes</p>
+			<p>There are currently '.$num.' note/s registered</p>
 			<img src=images/logo.png alt=noteIcon>
 	      </div>';
 	// Table header:
@@ -44,8 +44,8 @@ if ($num > 0) { // If it ran OK, display the records.
 	<tr>
 		<th align="left"><strong>Edit</strong></th>
 		<th align="left"><strong>Delete</strong></th>
-		<th align="left"><strong>Last Name</strong></th>
-		<th align="left"><strong>First Name</strong></th>
+		<th align="left"><strong>Title</strong></th>
+		<th align="left"><strong>Body Note</strong></th>
 		<th align="left"><strong>Date Registered</strong></th>
 	</tr>
 	</thead>
@@ -57,10 +57,10 @@ if ($num > 0) { // If it ran OK, display the records.
 	foreach ($rows as $row) {
 		// code...
 		echo '<tr>
-			<td align="left"><a href="edit_user.php?id=' . $row['user_id'] . '">Edit</a></td>
-			<td align="left"><a href="delete_user.php?id=' . $row['user_id'] . '">Delete</a></td>
-			<td align="left">' . $row['last_name'] . '</td>
-			<td align="left">' . $row['first_name'] . '</td>
+			<td align="left"><a href="edit_user.php?id=' . $row['note_id'] . '">Edit</a></td>
+			<td align="left"><a href="delete_user.php?id=' . $row['note_id'] . '">Delete</a></td>
+			<td align="left">' . $row['title'] . '</td>
+			<td align="left">' . $row['bodyNote'] . '</td>
 			<td align="left">' . $row['dr'] . '</td>
 		</tr>
 		';
@@ -70,7 +70,7 @@ if ($num > 0) { // If it ran OK, display the records.
 
 
 } else { // If no records were returned.
-	echo '<p class="error">There are currently no registered users.</p>';
+	echo '<p class="error">There are currently no registered notes.</p>';
 }
 
 
