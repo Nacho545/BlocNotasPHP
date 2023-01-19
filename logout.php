@@ -17,7 +17,10 @@ echo '<div class=registered>
 		<h1>--- See you soon! ---</h1>
 		<p>You are now loged out.</p>
 	</div>';
-
 ?>
 
-<?php include('includes/footer.html'); ?>
+<?php include('includes/footer.html'); 
+
+header("Location: index.php");
+exit
+?>
