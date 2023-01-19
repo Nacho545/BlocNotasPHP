@@ -43,6 +43,19 @@ body {
   color: white;
 }
 
+.radioButtons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #24303c;
+  padding: 17px;
+  border: 1px solid #1f53c5;
+  font-family: 'calibri';
+  font-weight: bold;
+  color: white;
+  border: none;
+}
+
 .textArea {
   font-size: 15px;
   resize: none;
@@ -102,6 +115,22 @@ body {
 .registered p {
   margin-top: 20px;
   font-size: 60px;
+  line-height: 50px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #7A7A7A;
+}
+
+.no-logged {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+}
+
+.no-logged p {
+  margin-top: 20px;
+  font-size: 80px;
   line-height: 50px;
   font-weight: bold;
   text-shadow: 1px 1px 0 #7A7A7A;
